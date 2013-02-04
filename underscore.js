@@ -295,7 +295,11 @@
     });
     return shuffled;
   };
-
+  
+  // Sample a random value from an array.
+  _.sample = function(obj) {
+    return obj.length > 0 ? obj[_.random(obj.length - 1)] : null;
+  };
   // An internal function to generate lookup iterators.
   var lookupIterator = function(value) {
     return _.isFunction(value) ? value : function(obj){ return obj[value]; };
